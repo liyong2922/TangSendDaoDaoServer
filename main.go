@@ -8,14 +8,14 @@ import (
 	"runtime"
 	"strings"
 
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/module"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/log"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/server"
 	"github.com/gin-gonic/gin"
 	"github.com/judwhite/go-svc"
 	_ "github.com/liyong2922/TangSengDaoDaoServer/internal"
 	"github.com/liyong2922/TangSengDaoDaoServer/modules/base/event"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/module"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/log"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/server"
 	"github.com/robfig/cron"
 	"github.com/spf13/viper"
 )

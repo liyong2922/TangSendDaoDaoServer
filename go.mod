@@ -4,8 +4,7 @@ go 1.20
 
 require (
 	firebase.google.com/go/v4 v4.13.0
-	github.com/liyong2922/TangSengDaoDaoServer v1.0.0
-	github.com/liyong2922/TangSengDaoDaoServerLib v1.0.0
+	github.com/TangSengDaoDao/TangSengDaoDaoServerLib v1.0.7
 	github.com/alibabacloud-go/darabonba-openapi v0.2.1
 	github.com/alibabacloud-go/sms-intl-20180501 v1.0.1
 	github.com/alibabacloud-go/tea v1.2.1
@@ -22,6 +21,7 @@ require (
 	github.com/gomarkdown/markdown v0.0.0-20230716120725-531d2d74bc12
 	github.com/gookit/goutil v0.6.12
 	github.com/judwhite/go-svc v1.2.1
+	github.com/liyong2922/TangSengDaoDaoServerLib v1.0.1
 	github.com/mattn/go-sqlite3 v1.14.17
 	github.com/minio/minio-go/v7 v7.0.61
 	github.com/olivere/elastic v6.2.37+incompatible
