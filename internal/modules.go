@@ -13,6 +13,7 @@ import (
 	_ "github.com/liyong2922/TangSengDaoDaoServer/modules/report"
 	_ "github.com/liyong2922/TangSengDaoDaoServer/modules/robot"
 	_ "github.com/liyong2922/TangSengDaoDaoServer/modules/statistics"
+	_ "github.com/liyong2922/TangSengDaoDaoServer/modules/sticker"
 	_ "github.com/liyong2922/TangSengDaoDaoServer/modules/user"
 	_ "github.com/liyong2922/TangSengDaoDaoServer/modules/webhook"
 )
