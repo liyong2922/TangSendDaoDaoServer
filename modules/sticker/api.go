@@ -23,4 +23,5 @@ func (r *Sticker) Route(l *wkhttp.WKHttp) {
 
 func (rb *Sticker) user(c *wkhttp.Context) {
 	c.ResponseError(errors.New("数据格式有误！"))
+	//111
 }
