@@ -13,7 +13,7 @@
 </p>
 <div align=center>
 
-<!-- [![Go](https://github.com/TangSengDaoDao/TangSengDaoDaoServer/workflows/Go/badge.svg?branch=main)](https://github.com/TangSengDaoDao/TangSengDaoDaoServer/actions) -->
+<!-- [![Go](https://github.com/liyong2922/TangSengDaoDaoServer/workflows/Go/badge.svg?branch=main)](https://github.com/liyong2922/TangSengDaoDaoServer/actions) -->
 ![GitHub go.mod Go version (subdirectory of monorepo)](https://img.shields.io/github/go-mod/go-version/TangSengDaoDao/TangSengDaoDaoServer)
 [![Go Report Card](https://goreportcard.com/badge/github.com/TangSengDaoDao/TangSengDaoDaoServer)](https://goreportcard.com/report/github.com/TangSengDaoDao/TangSengDaoDaoServer)
 ![License: Apache 2.0](https://img.shields.io/github/license/WuKongIM/WuKongIM) 

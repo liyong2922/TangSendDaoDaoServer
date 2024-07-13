@@ -6,12 +6,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/base/app"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/user"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/pkg/util"
 	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
 	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/wkhttp"
 	"github.com/gin-gonic/gin"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/base/app"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/user"
+	"github.com/liyong2922/TangSengDaoDaoServer/pkg/util"
 )
 
 type OpenAPI struct {

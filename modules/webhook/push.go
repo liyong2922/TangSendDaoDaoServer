@@ -1,9 +1,9 @@
 package webhook
 
 import (
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/user"
 	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/common"
 	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/user"
 )
 
 // Payload 推送内容

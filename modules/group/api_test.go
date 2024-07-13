@@ -8,9 +8,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/user"
 	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/util"
 	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/testutil"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/user"
 	"github.com/stretchr/testify/assert"
 )
 

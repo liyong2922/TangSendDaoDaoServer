@@ -11,8 +11,6 @@ import (
 	"sync"
 	"time"
 
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/base/app"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/user"
 	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/common"
 	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
 	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/log"
@@ -21,6 +19,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/go-redis/redis"
 	"github.com/gookit/goutil/maputil"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/base/app"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/user"
 	"go.uber.org/zap"
 )
 
