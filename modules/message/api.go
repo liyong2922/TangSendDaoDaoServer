@@ -657,7 +657,7 @@ func (m *Message) syncChannelMessage(c *wkhttp.Context) {
 		c.ResponseError(errors.New("数据格式有误！"))
 		return
 	}
-
+	m.Error("数据格式有误！122333333333333333333333333")
 	// 如果当前用户不在群内，则直接返回空消息数组
 	if req.ChannelType == common.ChannelTypeGroup.Uint8() {
 		exist, err := m.groupService.ExistMember(req.ChannelID, c.GetLoginUID())
@@ -1382,8 +1382,7 @@ func (m *Message) revoke(c *wkhttp.Context) {
 	clientMsgNo := c.Query("client_msg_no") // TODO：后续版本不再使用messageID撤回，使用client_msg_no撤回，因为存在重试消息，clientMsgNo一样 但是messageID不一样
 	channelID := c.Query("channel_id")
 	channelType := c.Query("channel_type")
-	c.ResponseError(errors.New("撤回失败234！"))
-	return
+
 	if strings.TrimSpace(clientMsgNo) == "" {
 		c.ResponseError(errors.New("撤回主键参数错误！"))
 		return
