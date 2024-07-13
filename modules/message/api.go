@@ -1382,7 +1382,8 @@ func (m *Message) revoke(c *wkhttp.Context) {
 	clientMsgNo := c.Query("client_msg_no") // TODO：后续版本不再使用messageID撤回，使用client_msg_no撤回，因为存在重试消息，clientMsgNo一样 但是messageID不一样
 	channelID := c.Query("channel_id")
 	channelType := c.Query("channel_type")
-
+	c.ResponseError(errors.New("撤回失败234！"))
+	return
 	if strings.TrimSpace(clientMsgNo) == "" {
 		c.ResponseError(errors.New("撤回主键参数错误！"))
 		return
