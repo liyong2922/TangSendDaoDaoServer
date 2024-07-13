@@ -5,9 +5,9 @@ import (
 	"io"
 	"testing"
 
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/file"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/testutil"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/file"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/testutil"
 	"github.com/stretchr/testify/assert"
 )
 

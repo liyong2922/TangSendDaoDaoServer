@@ -4,12 +4,13 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/log"
+	"io"
+
+	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/log"
 	"github.com/qiniu/go-sdk/v7/auth"
 	"github.com/qiniu/go-sdk/v7/storage"
 	"go.uber.org/zap"
-	"io"
 )
 
 type ServiceQiniu struct {

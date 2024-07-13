@@ -167,4 +167,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-//replace github.com/TangSengDaoDao/TangSengDaoDaoServerLib v1.0.8 => github.com/liyong2922/TangSengDaoDaoServerLib v1.0.0
+//replace github.com/liyong2922/TangSengDaoDaoServerLib v1.0.8 => github.com/liyong2922/TangSengDaoDaoServerLib v1.0.0

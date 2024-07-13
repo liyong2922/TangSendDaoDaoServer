@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/log"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/log"
 	"github.com/minio/minio-go/v7"
 	"github.com/minio/minio-go/v7/pkg/credentials"
 	"go.uber.org/zap"
