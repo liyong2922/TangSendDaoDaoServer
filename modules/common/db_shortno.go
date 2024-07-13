@@ -1,9 +1,9 @@
 package common
 
 import (
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
+	dbs "github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/db"
 	"github.com/gocraft/dbr/v2"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
-	dbs "github.com/liyong2922/TangSengDaoDaoServerLib/pkg/db"
 )
 
 type shortnoDB struct {

@@ -4,10 +4,10 @@ import (
 	"embed"
 	"fmt"
 
-	"github.com/liyong2922/TangSengDaoDaoServerLib/common"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/model"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/register"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/common"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/model"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/register"
 )
 
 //go:embed sql

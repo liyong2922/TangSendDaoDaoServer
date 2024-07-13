@@ -11,16 +11,16 @@ import (
 	"sync"
 	"time"
 
+	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/base/app"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/user"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/common"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/log"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/util"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/wkhttp"
 	"github.com/gin-gonic/gin"
 	"github.com/go-redis/redis"
 	"github.com/gookit/goutil/maputil"
-	"github.com/liyong2922/TangSengDaoDaoServer/modules/base/app"
-	"github.com/liyong2922/TangSengDaoDaoServer/modules/user"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/common"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/log"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/util"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/wkhttp"
 	"go.uber.org/zap"
 )
 

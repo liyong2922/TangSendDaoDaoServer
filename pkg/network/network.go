@@ -9,7 +9,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/liyong2922/TangSengDaoDaoServer/pkg/util"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServer/pkg/util"
 	"github.com/sendgrid/rest"
 )
 

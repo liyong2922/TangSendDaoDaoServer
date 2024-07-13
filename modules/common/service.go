@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
 	"go.uber.org/zap"
 )
 

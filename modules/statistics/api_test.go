@@ -6,9 +6,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/liyong2922/TangSengDaoDaoServer/modules/group"
-	"github.com/liyong2922/TangSengDaoDaoServer/modules/user"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/testutil"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/group"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/user"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/testutil"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -9,14 +9,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/liyong2922/TangSengDaoDaoServer/modules/base/event"
-	_ "github.com/liyong2922/TangSengDaoDaoServer/modules/webhook"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/common"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/module"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/util"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/server"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/testutil"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/base/event"
+	_ "github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/webhook"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/common"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/module"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/util"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/server"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/testutil"
 	"github.com/stretchr/testify/assert"
 )
 

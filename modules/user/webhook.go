@@ -3,8 +3,8 @@ package user
 import (
 	"fmt"
 
-	"github.com/liyong2922/TangSengDaoDaoServerLib/common"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/common"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
 	"go.uber.org/zap"
 )
 

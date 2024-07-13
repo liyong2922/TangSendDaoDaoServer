@@ -6,15 +6,15 @@ import (
 	"strings"
 	"time"
 
-	"github.com/liyong2922/TangSengDaoDaoServer/modules/base/event"
-	common2 "github.com/liyong2922/TangSengDaoDaoServer/modules/common"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/common"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/base/event"
+	common2 "github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/common"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/common"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
 
-	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/log"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/util"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/wkevent"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/wkhttp"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/log"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/util"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/wkevent"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/wkhttp"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 )

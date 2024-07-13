@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/liyong2922/TangSengDaoDaoServerLib/common"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/pool"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/util"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/common"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/pool"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/util"
 	"go.uber.org/zap"
 )
 

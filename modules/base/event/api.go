@@ -3,14 +3,14 @@ package event
 import (
 	"fmt"
 
+	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/file"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/log"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/util"
 	"github.com/gocraft/dbr/v2"
-	"github.com/liyong2922/TangSengDaoDaoServer/modules/file"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/log"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/util"
 	"go.uber.org/zap"
 
-	et "github.com/liyong2922/TangSengDaoDaoServerLib/pkg/wkevent"
+	et "github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/wkevent"
 )
 
 const (

@@ -3,7 +3,7 @@ package robot
 import (
 	"errors"
 
-	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
 )
 
 type robotEvent struct {

@@ -3,8 +3,8 @@ package message
 import (
 	"fmt"
 
+	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/db"
 	"github.com/gocraft/dbr/v2"
-	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/db"
 )
 
 type deviceOffsetDB struct {
