@@ -8,12 +8,12 @@ import (
 	"runtime"
 	"strings"
 
-	_ "github.com/TangSengDaoDao/TangSengDaoDaoServer/internal"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/base/event"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/module"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/log"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/server"
+	_ "github.com/liyong2922/liyong2922Server/internal"
+	"github.com/liyong2922/liyong2922Server/modules/base/event"
+	"github.com/liyong2922/liyong2922ServerLib/config"
+	"github.com/liyong2922/liyong2922ServerLib/module"
+	"github.com/liyong2922/liyong2922ServerLib/pkg/log"
+	"github.com/liyong2922/liyong2922ServerLib/server"
 	"github.com/gin-gonic/gin"
 	"github.com/judwhite/go-svc"
 	"github.com/robfig/cron"
@@ -138,7 +138,7 @@ tttttttttttttttttttttttttttttttttttttttt
 tttttttttttttttttttttttttttttttttttttttt
 111t111111111tt1111111tt1111111t11111111[0m
 [20A[9999999D[43C[0m[0m 
-[43C[0m[1m[32mTangSengDaoDao is running[0m 
+[43C[0m[1m[32mliyong2922 is running[0m 
 [43C[0m-------------------------[0m 
 [43C[0m[1m[33mMode[0m[0m:[0m #mode#[0m 
 [43C[0m[1m[33mConfig[0m[0m:[0m #configPath#[0m 
