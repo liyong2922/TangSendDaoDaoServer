@@ -8,10 +8,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/user"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/log"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/network"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/user"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/log"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/network"
 	"go.uber.org/zap"
 )
 

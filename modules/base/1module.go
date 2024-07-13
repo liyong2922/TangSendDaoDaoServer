@@ -3,9 +3,9 @@ package base
 import (
 	"embed"
 
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/base/app"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/register"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/base/app"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/register"
 )
 
 //go:embed sql

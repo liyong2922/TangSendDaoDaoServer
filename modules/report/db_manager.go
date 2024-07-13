@@ -1,9 +1,9 @@
 package report
 
 import (
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
-	dba "github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/db"
 	"github.com/gocraft/dbr/v2"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
+	dba "github.com/liyong2922/TangSengDaoDaoServerLib/pkg/db"
 )
 
 type managerDB struct {

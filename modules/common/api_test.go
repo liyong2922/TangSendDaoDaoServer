@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/util"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/testutil"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/util"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/testutil"
 	"github.com/stretchr/testify/assert"
 )
 

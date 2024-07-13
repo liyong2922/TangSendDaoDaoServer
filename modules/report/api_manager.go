@@ -5,12 +5,12 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/group"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/user"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/common"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/log"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/wkhttp"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/group"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/user"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/common"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/log"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/wkhttp"
 	"go.uber.org/zap"
 )
 

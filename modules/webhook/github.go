@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/wkhttp"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/wkhttp"
 )
 
 func (w *Webhook) github(c *wkhttp.Context) {

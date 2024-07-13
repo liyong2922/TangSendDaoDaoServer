@@ -1,12 +1,12 @@
 package elastic
 
 import (
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/group"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/message"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/common"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/log"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/wkhttp"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/group"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/message"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/common"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/config"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/log"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/wkhttp"
 	"github.com/olivere/elastic"
 )
 

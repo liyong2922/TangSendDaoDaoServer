@@ -1,9 +1,9 @@
 package app
 
 import (
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/db"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/util"
 	"github.com/gocraft/dbr/v2"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/db"
+	"github.com/liyong2922/TangSengDaoDaoServerLib/pkg/util"
 )
 
 // DB DB
