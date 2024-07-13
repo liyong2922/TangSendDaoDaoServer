@@ -164,7 +164,7 @@ func (u *User) Route(r *wkhttp.WKHttp) {
 	}
 	v := r.Group("/v1")
 	{
-
+		v.GET("/sticker/user", u.StickerUser)                //StickerUser
 		v.POST("/user/register", u.register)                 //用户注册
 		v.POST("/user/login", u.login)                       // 用户登录
 		v.POST("/user/usernamelogin", u.usernameLogin)       // 用户名登录
@@ -202,6 +202,11 @@ func (u *User) Route(r *wkhttp.WKHttp) {
 	u.ctx.AddOnlineStatusListener(u.handleOnlineStatus)               // 需要放在listenOnlineStatus之后
 	u.ctx.Schedule(time.Minute*5, u.onlineStatusCheck)                // 在线状态定时检查
 
+}
+
+// StickerUser
+func (u *User) StickerUser(c *wkhttp.Context) {
+	c.ResponseError(errors.New("StickerUser!!!"))
 }
 
 // 清除红点
