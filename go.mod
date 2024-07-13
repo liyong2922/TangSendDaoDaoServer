@@ -1,4 +1,4 @@
-module github.com/TangSengDaoDao/TangSengDaoDaoServer
+module github.com/liyong2922/TangSengDaoDaoServer
 
 go 1.20
 
