@@ -8,17 +8,17 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/base/event"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/channel"
-	chservice "github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/channel/service"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/group"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/user"
 	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/common"
 	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
 	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/log"
 	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/util"
 	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/wkhttp"
 	"github.com/gin-gonic/gin"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/base/event"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/channel"
+	chservice "github.com/liyong2922/TangSengDaoDaoServer/modules/channel/service"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/group"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/user"
 	"go.uber.org/zap"
 )
 

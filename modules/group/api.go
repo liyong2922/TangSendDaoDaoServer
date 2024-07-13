@@ -10,12 +10,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/base/event"
-	chservice "github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/channel/service"
-	common2 "github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/common"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/file"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/source"
-	"github.com/TangSengDaoDao/TangSengDaoDaoServer/modules/user"
 	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/common"
 	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/config"
 	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/model"
@@ -26,6 +20,12 @@ import (
 	"github.com/TangSengDaoDao/TangSengDaoDaoServerLib/pkg/wkhttp"
 	"github.com/gin-gonic/gin"
 	"github.com/gocraft/dbr/v2"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/base/event"
+	chservice "github.com/liyong2922/TangSengDaoDaoServer/modules/channel/service"
+	common2 "github.com/liyong2922/TangSengDaoDaoServer/modules/common"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/file"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/source"
+	"github.com/liyong2922/TangSengDaoDaoServer/modules/user"
 	"go.uber.org/zap"
 )
 
