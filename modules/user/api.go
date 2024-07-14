@@ -207,9 +207,22 @@ func (u *User) Route(r *wkhttp.WKHttp) {
 // StickerUser
 func (u *User) PostStickerUser(c *wkhttp.Context) {
 
+	var req struct {
+		path        string `json:"path"`
+		width       int    `json:"width"`
+		height      int    `json:"height"`
+		fotmat      string `json:"format"`
+		placeholder string `json:"placeholder"`
+		category    string `json:"category"`
+	}
+	if err := c.BindJSON(&req); err != nil {
+		c.ResponseErrorf("数据格式有误！", err)
+		return
+	}
 	b, _ := ioutil.ReadAll(c.Request.Body)
 	u.Error(string(b))
-	u.Info(fmt.Sprintf("Path:%s", c.Param("path")))
+	u.Info(fmt.Sprintf("Path:%s", req.path))
+	u.Info(fmt.Sprintf("width:%d", req.width))
 	u.Info(fmt.Sprintf("Uid:%s", c.GetLoginUID()))
 	c.ResponseError(errors.New("StickerUser2025!!!"))
 }
