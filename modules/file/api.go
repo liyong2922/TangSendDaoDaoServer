@@ -5,6 +5,9 @@ import (
 	"encoding/base64"
 	"errors"
 	"fmt"
+	"image"
+	_ "image/jpeg"
+	_ "image/png"
 	"io"
 	"net/http"
 	"strconv"
@@ -133,6 +136,21 @@ func (f *File) uploadFile(c *wkhttp.Context) {
 		c.ResponseError(errors.New("读取文件失败！"))
 		return
 	}
+
+	var memberImg image.Image
+	var format string
+	memberImg, format, err = image.Decode(file)
+
+	// 画圆角
+	//var imgWidth int
+	//var imgHeight int
+
+	imgWidth := memberImg.Bounds().Dx()
+	imgHeight := memberImg.Bounds().Dy()
+	f.Error("format:" + format)
+	f.Error("imgWidth:" + string(imgWidth))
+	f.Error("imgHeight:" + string(imgHeight))
+
 	path := uploadPath
 	if !strings.HasPrefix(path, "/") {
 		path = fmt.Sprintf("/%s", path)
@@ -156,6 +174,7 @@ func (f *File) uploadFile(c *wkhttp.Context) {
 		//	sign = sha512.Sum512(bytes)
 
 	}
+
 	_, err = f.service.UploadFile(fmt.Sprintf("%s%s", fileType, path), contentType, func(w io.Writer) error {
 		_, err := file.Seek(0, io.SeekStart)
 		if err != nil {
