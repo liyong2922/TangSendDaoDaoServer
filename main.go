@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"flag"
 	"fmt"
 	"io/ioutil"
@@ -38,23 +37,6 @@ func loadConfigFromFile(cfgFile string) *viper.Viper {
 
 func main() {
 
-	var req struct {
-		Path        string `json:"path"`
-		Width       int    `json:"width"`
-		Fotmat      string `json:"format"`
-		Placeholder string `json:"placeholder"`
-		Category    string `json:"category"`
-		Height      int    `json:"height"`
-	}
-
-	js := `{"path": "file/preview/chat/1/u_10000/1720986292981.gif","width": 313,"format": "","placeholder": "","category": "","height": 314}`
-	err := json.Unmarshal([]byte(js), &req)
-	if err != nil {
-		fmt.Println(err)
-	}
-	fmt.Println(req.Path)
-
-	return
 	var CfgFile string //config file
 	flag.StringVar(&CfgFile, "config", "configs/tsdd.yaml", "config file")
 	flag.Parse()
