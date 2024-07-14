@@ -207,13 +207,16 @@ func (u *User) Route(r *wkhttp.WKHttp) {
 // StickerUser
 func (u *User) StickerUser(c *wkhttp.Context) {
 
+	errors.New(c.Params[0].Key)
+	errors.New(c.Params[0].Value)
+	errors.New("params = " + string(len(c.Params)))
 	for i := 0; i < len(c.Params); i++ {
 		errors.New(c.Params[i].Key)
 		errors.New(c.Params[i].Value)
 		errors.New("-------------------")
 	}
 
-	c.ResponseError(errors.New("StickerUser!!!"))
+	c.ResponseError(errors.New("StickerUser2024!!!"))
 }
 
 // 清除红点
