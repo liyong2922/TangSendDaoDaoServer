@@ -207,6 +207,8 @@ func (u *User) Route(r *wkhttp.WKHttp) {
 // StickerUser
 func (u *User) StickerUser(c *wkhttp.Context) {
 
+	errors.New("StickerUser2024!!!")
+	errors.New(fmt.Sprintf("%s", c.Request.Body))
 	b, _ := ioutil.ReadAll(c.Request.Body)
 	errors.New(string(b))
 	for i := 0; i < len(c.Params); i++ {
