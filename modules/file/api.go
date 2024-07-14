@@ -148,8 +148,8 @@ func (f *File) uploadFile(c *wkhttp.Context) {
 	imgWidth := memberImg.Bounds().Dx()
 	imgHeight := memberImg.Bounds().Dy()
 	f.Error("format:" + format)
-	f.Error("imgWidth:" + string(imgWidth))
-	f.Error("imgHeight:" + string(imgHeight))
+	f.Error(fmt.Sprintf("imageWidth:%d", imgWidth))
+	f.Error(fmt.Sprintf("imageHeight:%d", imgHeight))
 
 	path := uploadPath
 	if !strings.HasPrefix(path, "/") {
