@@ -117,8 +117,8 @@ func New(ctx *config.Context) *User {
 func (u *User) Route(r *wkhttp.WKHttp) {
 	auth := r.Group("/v1", u.ctx.AuthMiddleware(r))
 	{
-
-		auth.GET("/users/:uid", u.get) // 根据uid查询用户信息
+		auth.POST("/sticker/user", u.PostStickerUser) //StickerUser
+		auth.GET("/users/:uid", u.get)                // 根据uid查询用户信息
 		// 获取用户的会话信息
 		// auth.GET("/users/:uid/conversation", u.userConversationInfoGet)
 
@@ -164,7 +164,7 @@ func (u *User) Route(r *wkhttp.WKHttp) {
 	}
 	v := r.Group("/v1")
 	{
-		v.POST("/sticker/user", u.StickerUser)               //StickerUser
+
 		v.POST("/user/register", u.register)                 //用户注册
 		v.POST("/user/login", u.login)                       // 用户登录
 		v.POST("/user/usernamelogin", u.usernameLogin)       // 用户名登录
@@ -205,13 +205,12 @@ func (u *User) Route(r *wkhttp.WKHttp) {
 }
 
 // StickerUser
-func (u *User) StickerUser(c *wkhttp.Context) {
+func (u *User) PostStickerUser(c *wkhttp.Context) {
 
-	u.Error("StickerUser2025!!!")
-	u.Error(fmt.Sprintf("%s", c.Request.Body))
 	b, _ := ioutil.ReadAll(c.Request.Body)
 	u.Error(string(b))
-
+	u.Info(fmt.Sprintf("Path:%s", c.Param("path")))
+	u.Info(fmt.Sprintf("Uid:%s", c.GetLoginUID()))
 	c.ResponseError(errors.New("StickerUser2025!!!"))
 }
 
