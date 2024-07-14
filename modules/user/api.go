@@ -207,7 +207,6 @@ func (u *User) Route(r *wkhttp.WKHttp) {
 // StickerUser
 func (u *User) PostStickerUser(c *wkhttp.Context) {
 
-	c.BindJSON()
 	b, _ := ioutil.ReadAll(c.Request.Body)
 	u.Error(string(b))
 	var req struct {
