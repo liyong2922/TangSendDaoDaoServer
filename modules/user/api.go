@@ -210,12 +210,12 @@ func (u *User) PostStickerUser(c *wkhttp.Context) {
 	b, _ := ioutil.ReadAll(c.Request.Body)
 	u.Error(string(b))
 	var req struct {
-		path        string `json:"path"`
-		width       int    `json:"width"`
-		fotmat      string `json:"format"`
-		placeholder string `json:"placeholder"`
-		category    string `json:"category"`
-		height      int    `json:"height"`
+		Path        string `json:"path"`
+		Width       int    `json:"width"`
+		Fotmat      string `json:"format"`
+		Placeholder string `json:"placeholder"`
+		Category    string `json:"category"`
+		Height      int    `json:"height"`
 	}
 
 	if err := json.Unmarshal(b, &req); err != nil {
@@ -225,8 +225,9 @@ func (u *User) PostStickerUser(c *wkhttp.Context) {
 	cc, _ := ioutil.ReadAll(c.Request.Body)
 	u.Error(string(cc))
 
-	u.Info(fmt.Sprintf("height:%d", req.height))
-	u.Info(fmt.Sprintf("width:%d", req.width))
+	u.Info(fmt.Sprintf("height:%d", req.Height))
+	u.Info(fmt.Sprintf("width:%d", req.Width))
+	u.Info(fmt.Sprintf("Path:%d", req.Path))
 	u.Info(fmt.Sprintf("Uid:%s", c.GetLoginUID()))
 	c.ResponseError(errors.New("StickerUser2025!!!"))
 }

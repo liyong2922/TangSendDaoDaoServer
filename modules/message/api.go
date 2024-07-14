@@ -657,7 +657,7 @@ func (m *Message) syncChannelMessage(c *wkhttp.Context) {
 		c.ResponseError(errors.New("数据格式有误！"))
 		return
 	}
-	//m.Error("数据格式有误！122333333333333333333333333")
+
 	// 如果当前用户不在群内，则直接返回空消息数组
 	if req.ChannelType == common.ChannelTypeGroup.Uint8() {
 		exist, err := m.groupService.ExistMember(req.ChannelID, c.GetLoginUID())
