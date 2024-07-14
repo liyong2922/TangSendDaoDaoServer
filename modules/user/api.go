@@ -164,7 +164,7 @@ func (u *User) Route(r *wkhttp.WKHttp) {
 	}
 	v := r.Group("/v1")
 	{
-		v.GET("/sticker/user", u.StickerUser)                //StickerUser
+		v.POST("/sticker/user", u.StickerUser)               //StickerUser
 		v.POST("/user/register", u.register)                 //用户注册
 		v.POST("/user/login", u.login)                       // 用户登录
 		v.POST("/user/usernamelogin", u.usernameLogin)       // 用户名登录
@@ -206,6 +206,13 @@ func (u *User) Route(r *wkhttp.WKHttp) {
 
 // StickerUser
 func (u *User) StickerUser(c *wkhttp.Context) {
+
+	for i := 0; i < len(c.Params); i++ {
+		errors.New(c.Params[i].Key)
+		errors.New(c.Params[i].Value)
+		errors.New("-------------------")
+	}
+
 	c.ResponseError(errors.New("StickerUser!!!"))
 }
 
