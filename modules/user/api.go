@@ -273,8 +273,33 @@ func (u *User) GetStickerUser(c *wkhttp.Context) {
 		c.ResponseError(errors.New("该分类下表情为空"))
 		return
 	}
+	type StickerUser_ret struct {
+		path            string
+		width           int
+		height          int
+		format          string
+		placeholder     string
+		category        string
+		searchable_word string
+		title           string
+		sort_num        int
+	}
+	var ret []StickerUser_ret
+	for _, v := range model {
+		ret = append(ret, StickerUser_ret{
+			path:            v.Path,
+			width:           v.Width,
+			height:          v.Height,
+			format:          v.Format,
+			placeholder:     v.Placeholder,
+			category:        v.Category,
+			searchable_word: v.Searchable_word,
+			title:           v.Title,
+			sort_num:        v.Sort_num,
+		})
+	}
 
-	c.Response(model)
+	c.Response(ret)
 }
 
 // StickerUser
