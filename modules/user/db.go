@@ -71,6 +71,13 @@ func (d *DB) InsertStickerUser(S *StickerUser) error {
 	return err
 }
 
+// Insert 查询表情
+func (d *DB) QueryStickerUser(Uid string) ([]*StickerUser, error) {
+	var S []*StickerUser
+	_, err := d.session.Select("*").From("sticker_user").Where("uid=?", Uid).Load(&S)
+	return S, err
+}
+
 // Insert 添加用户
 func (d *DB) Insert(m *Model) error {
 	_, err := d.session.InsertInto("user").Columns(util.AttrToUnderscore(m)...).Record(m).Exec()

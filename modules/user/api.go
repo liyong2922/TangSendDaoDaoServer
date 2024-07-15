@@ -118,6 +118,7 @@ func (u *User) Route(r *wkhttp.WKHttp) {
 	auth := r.Group("/v1", u.ctx.AuthMiddleware(r))
 	{
 		auth.POST("/sticker/user", u.PostStickerUser) //StickerUser
+		auth.GET("/sticker/user", u.GetStickerUser)   //StickerUser
 		auth.GET("/users/:uid", u.get)                // 根据uid查询用户信息
 		// 获取用户的会话信息
 		// auth.GET("/users/:uid/conversation", u.userConversationInfoGet)
@@ -247,6 +248,19 @@ func (u *User) PostStickerUser(c *wkhttp.Context) {
 	}
 
 	c.ResponseError(errors.New("StickerUser2025!!!"))
+}
+
+// StickerUser
+func (u *User) GetStickerUser(c *wkhttp.Context) {
+
+	uid := c.GetLoginUID()
+	model, err := u.db.QueryStickerUser(uid)
+	if err != nil {
+		u.Error("查询用户贴纸失败", zap.Error(err))
+		c.ResponseError(errors.New("查询用户贴纸失败"))
+		return
+	}
+	c.Response(model)
 }
 
 // 清除红点
