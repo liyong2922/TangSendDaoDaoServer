@@ -250,7 +250,8 @@ func (u *User) PostStickerUser(c *wkhttp.Context) {
 }
 func (u *User) GetStickerUsercategory(c *wkhttp.Context) {
 
-	c.Response("{}")
+	c.ResponseError(errors.New("该分类下表情为空!"))
+	return
 }
 
 // StickerUser
@@ -268,8 +269,8 @@ func (u *User) GetStickerUser(c *wkhttp.Context) {
 		model[i].Sort_num = i + 1
 	}
 	if len(model) == 0 {
-		u.Error("表情获取失败 module = 0")
-		c.Response("{}")
+		u.Error("该分类下表情为空")
+		c.ResponseError(errors.New("该分类下表情为空"))
 		return
 	}
 
