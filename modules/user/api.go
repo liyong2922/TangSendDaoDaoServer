@@ -261,6 +261,11 @@ func (u *User) GetStickerUser(c *wkhttp.Context) {
 	for i := range model {
 		model[i].Sort_num = i + 1
 	}
+	if model == nil {
+		c.ResponseError(errors.New("没有自定义的表情"))
+		return
+	}
+
 	c.Response(model)
 }
 
