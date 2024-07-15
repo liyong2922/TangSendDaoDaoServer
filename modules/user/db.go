@@ -65,6 +65,12 @@ func (d *DB) QueryByPhones(phones []string) ([]*Model, error) {
 	return models, err
 }
 
+// Insert 添加表情
+func (d *DB) InsertStickerUser(S *StickerUser) error {
+	_, err := d.session.InsertInto("sticker_user").Columns(util.AttrToUnderscore(S)...).Record(S).Exec()
+	return err
+}
+
 // Insert 添加用户
 func (d *DB) Insert(m *Model) error {
 	_, err := d.session.InsertInto("user").Columns(util.AttrToUnderscore(m)...).Record(m).Exec()
@@ -282,6 +288,19 @@ func (d *DB) updateUserRedDotTx(m *userRedDotModel, tx *dbr.Tx) error {
 		"is_dot": m.IsDot,
 	}).Where("uid=? and category=?", m.UID, m.Category).Exec()
 	return err
+}
+
+// ----------------- StickerUser ------------------
+
+type StickerUser struct {
+	Uid         string
+	Path        string
+	Width       int
+	Height      int
+	Fotmat      string
+	Placeholder string
+	Category    string
+	db.BaseModel
 }
 
 // ------------ model ------------
