@@ -274,32 +274,33 @@ func (u *User) GetStickerUser(c *wkhttp.Context) {
 		return
 	}
 	type StickerUser_ret struct {
-		path            string
-		width           int
-		height          int
-		format          string
-		placeholder     string
-		category        string
-		searchable_word string
-		title           string
-		sort_num        int
+		Path            string `json:"path"`
+		Width           int    `json:"width"`
+		Height          int    `json:"height"`
+		Format          string `json:"format"`
+		Placeholder     string `json:"placeholder"`
+		Category        string `json:"category"`
+		Searchable_word string `json:"searchable_word"`
+		Title           string `json:"title"`
+		Sort_num        int    `json:"sort_num"`
 	}
+
 	var ret []StickerUser_ret
 	for _, v := range model {
 		ret = append(ret, StickerUser_ret{
-			path:            v.Path,
-			width:           v.Width,
-			height:          v.Height,
-			format:          v.Format,
-			placeholder:     v.Placeholder,
-			category:        v.Category,
-			searchable_word: v.Searchable_word,
-			title:           v.Title,
-			sort_num:        v.Sort_num,
+			Path:            v.Path,
+			Width:           v.Width,
+			Height:          v.Height,
+			Format:          v.Format,
+			Placeholder:     v.Placeholder,
+			Category:        v.Category,
+			Searchable_word: v.Searchable_word,
+			Title:           v.Title,
+			Sort_num:        v.Sort_num,
 		})
 	}
-	jsonBytes, _ := json.Marshal(ret)
-	c.Response(jsonBytes)
+
+	c.Response(ret)
 }
 
 // StickerUser
