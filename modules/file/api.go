@@ -221,9 +221,11 @@ func (f *File) getFile(c *wkhttp.Context) {
 	}
 	downloadURL, err := f.service.DownloadURL(ph, filename)
 	if err != nil {
+		f.Error("下载文件失败！", zap.Error(err))
 		c.ResponseError(err)
 		return
 	}
+	f.Error("getFile:" + downloadURL)
 	c.Redirect(http.StatusFound, downloadURL)
 }
 
