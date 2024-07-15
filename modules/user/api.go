@@ -242,13 +242,7 @@ func (u *User) PostStickerUser(c *wkhttp.Context) {
 		return
 	}
 
-	modelret, err := u.db.QueryStickerUser(uid)
-	if err != nil {
-		u.Error("表情获取失败", zap.Error(err))
-		c.ResponseError(errors.New("表情获取失败"))
-		return
-	}
-	c.Response(modelret)
+	c.ResponseOK()
 }
 
 // StickerUser
@@ -284,13 +278,7 @@ func (u *User) DeleteStickerUser(c *wkhttp.Context) {
 		c.ResponseError(errors.New("表情删除失败"))
 		return
 	}
-	modelret, err := u.db.QueryStickerUser(uid)
-	if err != nil {
-		u.Error("表情获取失败", zap.Error(err))
-		c.ResponseError(errors.New("表情获取失败"))
-		return
-	}
-	c.Response(modelret)
+	c.ResponseOK()
 }
 
 // 清除红点
