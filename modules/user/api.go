@@ -209,6 +209,7 @@ func (u *User) Route(r *wkhttp.WKHttp) {
 // StickerUser
 func (u *User) PostStickerUser(c *wkhttp.Context) {
 
+	uid := c.GetLoginUID()
 	b, _ := ioutil.ReadAll(c.Request.Body)
 	u.Error(string(b))
 	var req struct {
@@ -226,7 +227,7 @@ func (u *User) PostStickerUser(c *wkhttp.Context) {
 	}
 
 	var model StickerUser
-	model.Uid = c.GetLoginUID()
+	model.Uid = uid
 	model.Path = req.Path
 	model.Width = req.Width
 	model.Height = req.Height
@@ -241,7 +242,13 @@ func (u *User) PostStickerUser(c *wkhttp.Context) {
 		return
 	}
 
-	c.ResponseOK()
+	modelret, err := u.db.QueryStickerUser(uid)
+	if err != nil {
+		u.Error("表情获取失败", zap.Error(err))
+		c.ResponseError(errors.New("表情获取失败"))
+		return
+	}
+	c.Response(modelret)
 }
 
 // StickerUser
@@ -277,7 +284,13 @@ func (u *User) DeleteStickerUser(c *wkhttp.Context) {
 		c.ResponseError(errors.New("表情删除失败"))
 		return
 	}
-	c.ResponseOK()
+	modelret, err := u.db.QueryStickerUser(uid)
+	if err != nil {
+		u.Error("表情获取失败", zap.Error(err))
+		c.ResponseError(errors.New("表情获取失败"))
+		return
+	}
+	c.Response(modelret)
 }
 
 // 清除红点
