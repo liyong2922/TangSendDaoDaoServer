@@ -65,17 +65,23 @@ func (d *DB) QueryByPhones(phones []string) ([]*Model, error) {
 	return models, err
 }
 
-// Insert 添加表情
+// 添加表情
 func (d *DB) InsertStickerUser(S *StickerUser) error {
 	_, err := d.session.InsertInto("sticker_user").Columns(util.AttrToUnderscore(S)...).Record(S).Exec()
 	return err
 }
 
-// Insert 查询表情
+// 查询表情
 func (d *DB) QueryStickerUser(Uid string) ([]*StickerUser, error) {
 	var S []*StickerUser
 	_, err := d.session.Select("*").From("sticker_user").Where("uid=?", Uid).Load(&S)
 	return S, err
+}
+
+// 删除表情
+func (d *DB) DeleteStickerUser(Uid string, paths []string) error {
+	_, err := d.session.DeleteFrom("sticker_user").Where("uid=? and path in ?", Uid, paths).Exec()
+	return err
 }
 
 // Insert 添加用户

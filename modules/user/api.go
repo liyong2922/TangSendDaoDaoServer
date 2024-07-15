@@ -117,10 +117,10 @@ func New(ctx *config.Context) *User {
 func (u *User) Route(r *wkhttp.WKHttp) {
 	auth := r.Group("/v1", u.ctx.AuthMiddleware(r))
 	{
-		auth.POST("/sticker/user", u.PostStickerUser)  //StickerUser
-		auth.GET("/sticker/user", u.GetStickerUser)    //StickerUser
-		auth.DELETE("/sticker/user", u.DelStickerUser) //StickerUser
-		auth.GET("/users/:uid", u.get)                 // 根据uid查询用户信息
+		auth.POST("/sticker/user", u.PostStickerUser)     //StickerUser
+		auth.GET("/sticker/user", u.GetStickerUser)       //StickerUser
+		auth.DELETE("/sticker/user", u.DeleteStickerUser) //StickerUser
+		auth.GET("/users/:uid", u.get)                    // 根据uid查询用户信息
 		// 获取用户的会话信息
 		// auth.GET("/users/:uid/conversation", u.userConversationInfoGet)
 
@@ -258,7 +258,7 @@ func (u *User) GetStickerUser(c *wkhttp.Context) {
 }
 
 // StickerUser
-func (u *User) DelStickerUser(c *wkhttp.Context) {
+func (u *User) DeleteStickerUser(c *wkhttp.Context) {
 
 	b, _ := ioutil.ReadAll(c.Request.Body)
 	u.Error(string(b))
