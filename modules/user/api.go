@@ -229,6 +229,23 @@ func (u *User) PostStickerUser(c *wkhttp.Context) {
 	u.Info(fmt.Sprintf("width:%d", req.Width))
 	u.Info(fmt.Sprintf("Path:%d", req.Path))
 	u.Info(fmt.Sprintf("Uid:%s", c.GetLoginUID()))
+
+	var model StickerUser
+	model.Uid = c.GetLoginUID()
+	model.Path = req.Path
+	model.Width = req.Width
+	model.Height = req.Height
+	model.Fotmat = req.Fotmat
+	model.Placeholder = req.Placeholder
+	model.Category = req.Category
+	err := u.db.InsertStickerUser(&model)
+
+	if err != nil {
+		u.Error("插入用户贴纸失败", zap.Error(err))
+		c.ResponseError(errors.New("插入用户贴纸失败"))
+		return
+	}
+
 	c.ResponseError(errors.New("StickerUser2025!!!"))
 }
 
