@@ -297,7 +297,7 @@ type StickerUser struct {
 	Path        string
 	Width       int
 	Height      int
-	Fotmat      string
+	Format      string
 	Placeholder string
 	Category    string
 	db.BaseModel

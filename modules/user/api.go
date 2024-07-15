@@ -212,7 +212,7 @@ func (u *User) PostStickerUser(c *wkhttp.Context) {
 	var req struct {
 		Path        string `json:"path"`
 		Width       int    `json:"width"`
-		Fotmat      string `json:"format"`
+		Format      string `json:"format"`
 		Placeholder string `json:"placeholder"`
 		Category    string `json:"category"`
 		Height      int    `json:"height"`
@@ -235,7 +235,7 @@ func (u *User) PostStickerUser(c *wkhttp.Context) {
 	model.Path = req.Path
 	model.Width = req.Width
 	model.Height = req.Height
-	model.Fotmat = req.Fotmat
+	model.Format = req.Format
 	model.Placeholder = req.Placeholder
 	model.Category = req.Category
 	err := u.db.InsertStickerUser(&model)
