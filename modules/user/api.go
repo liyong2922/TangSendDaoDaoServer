@@ -260,10 +260,24 @@ func (u *User) GetStickerUser(c *wkhttp.Context) {
 // StickerUser
 func (u *User) DelStickerUser(c *wkhttp.Context) {
 
-	cc, _ := ioutil.ReadAll(c.Request.Body)
-	u.Error(string(cc))
+	b, _ := ioutil.ReadAll(c.Request.Body)
+	u.Error(string(b))
+	var req struct {
+		Paths []string `json:"paths"`
+	}
+	if err := json.Unmarshal(b, &req); err != nil {
+		c.ResponseErrorf("数据格式有误！", err)
+		return
+	}
 
-	c.ResponseError(errors.New("StickerUser2025!!!"))
+	uid := c.GetLoginUID()
+	err := u.db.DeleteStickerUser(uid, req.Paths)
+	if err != nil {
+		u.Error("表情删除失败", zap.Error(err))
+		c.ResponseError(errors.New("表情删除失败"))
+		return
+	}
+	c.ResponseError(errors.New("表情删除成功"))
 }
 
 // 清除红点
