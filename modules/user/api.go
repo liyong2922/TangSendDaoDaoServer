@@ -298,8 +298,8 @@ func (u *User) GetStickerUser(c *wkhttp.Context) {
 			sort_num:        v.Sort_num,
 		})
 	}
-
-	c.Response(ret)
+	jsonBytes, _ := json.Marshal(ret)
+	c.Response(jsonBytes)
 }
 
 // StickerUser
