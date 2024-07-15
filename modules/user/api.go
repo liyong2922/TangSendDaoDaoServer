@@ -241,7 +241,7 @@ func (u *User) PostStickerUser(c *wkhttp.Context) {
 		return
 	}
 
-	c.ResponseError(errors.New("表情添加成功"))
+	c.ResponseOK()
 }
 
 // StickerUser
@@ -277,7 +277,7 @@ func (u *User) DeleteStickerUser(c *wkhttp.Context) {
 		c.ResponseError(errors.New("表情删除失败"))
 		return
 	}
-	c.ResponseError(errors.New("表情删除成功"))
+	c.ResponseOK()
 }
 
 // 清除红点
