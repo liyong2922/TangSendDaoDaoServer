@@ -268,7 +268,7 @@ func (u *User) GetStickerUser(c *wkhttp.Context) {
 	}
 	if len(model) == 0 {
 		u.Error("表情获取失败 module = 0")
-		c.ResponseOK()
+		c.ResponseError(errors.New("表情添加失败"))
 		return
 	}
 
