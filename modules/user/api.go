@@ -249,7 +249,7 @@ func (u *User) PostStickerUser(c *wkhttp.Context) {
 }
 func (u *User) GetStickerUsercategory(c *wkhttp.Context) {
 
-	c.ResponseOK()
+	c.ResponseError(errors.New("表情添加失败"))
 }
 
 // StickerUser
