@@ -306,16 +306,16 @@ func (d *DB) updateUserRedDotTx(m *userRedDotModel, tx *dbr.Tx) error {
 // ----------------- StickerUser ------------------
 
 type StickerUser struct {
-	uid             string
-	path            string
-	width           int
-	height          int
-	format          string
-	placeholder     string
-	category        string
-	searchable_word string
-	title           string
-	sort_num        int
+	Uid             string
+	Path            string
+	Width           int
+	Height          int
+	Format          string
+	Placeholder     string
+	Category        string
+	Searchable_word string
+	Title           string
+	Sort_num        int
 }
 
 // ------------ model ------------

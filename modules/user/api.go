@@ -227,15 +227,15 @@ func (u *User) PostStickerUser(c *wkhttp.Context) {
 	}
 
 	var model StickerUser
-	model.uid = uid
-	model.path = req.Path
-	model.width = req.Width
-	model.height = req.Height
-	model.format = req.Format
-	model.placeholder = req.Placeholder
-	model.category = req.Category
-	model.searchable_word = ""
-	model.title = ""
+	model.Uid = uid
+	model.Path = req.Path
+	model.Width = req.Width
+	model.Height = req.Height
+	model.Format = req.Format
+	model.Placeholder = req.Placeholder
+	model.Category = req.Category
+	model.Searchable_word = ""
+	model.Title = ""
 	err := u.db.InsertStickerUser(&model)
 
 	if err != nil {
