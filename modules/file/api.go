@@ -5,7 +5,6 @@ import (
 	"encoding/base64"
 	"errors"
 	"fmt"
-	"image"
 	_ "image/jpeg"
 	_ "image/png"
 	"io"
@@ -137,20 +136,6 @@ func (f *File) uploadFile(c *wkhttp.Context) {
 		return
 	}
 
-	var memberImg image.Image
-	var format string
-	memberImg, format, err = image.Decode(file)
-
-	// 画圆角
-	//var imgWidth int
-	//var imgHeight int
-
-	imgWidth := memberImg.Bounds().Dx()
-	imgHeight := memberImg.Bounds().Dy()
-	f.Error("format:" + format)
-	f.Error(fmt.Sprintf("imageWidth:%d", imgWidth))
-	f.Error(fmt.Sprintf("imageHeight:%d", imgHeight))
-
 	path := uploadPath
 	if !strings.HasPrefix(path, "/") {
 		path = fmt.Sprintf("/%s", path)
@@ -225,7 +210,7 @@ func (f *File) getFile(c *wkhttp.Context) {
 		c.ResponseError(err)
 		return
 	}
-	f.Error("getFile:" + downloadURL)
+
 	c.Redirect(http.StatusFound, downloadURL)
 }
 
