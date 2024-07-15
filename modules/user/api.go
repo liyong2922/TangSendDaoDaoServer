@@ -227,13 +227,15 @@ func (u *User) PostStickerUser(c *wkhttp.Context) {
 	}
 
 	var model StickerUser
-	model.Uid = uid
-	model.Path = req.Path
-	model.Width = req.Width
-	model.Height = req.Height
-	model.Format = req.Format
-	model.Placeholder = req.Placeholder
-	model.Category = req.Category
+	model.uid = uid
+	model.path = req.Path
+	model.width = req.Width
+	model.height = req.Height
+	model.format = req.Format
+	model.placeholder = req.Placeholder
+	model.category = req.Category
+	model.searchable_word = ""
+	model.title = ""
 	err := u.db.InsertStickerUser(&model)
 
 	if err != nil {
@@ -254,6 +256,10 @@ func (u *User) GetStickerUser(c *wkhttp.Context) {
 		u.Error("表情获取失败", zap.Error(err))
 		c.ResponseError(errors.New("表情获取失败"))
 		return
+	}
+	// 给model 增加一个排序字段
+	for i, v := range model {
+		model[i].sort_num = i
 	}
 	c.Response(model)
 }
