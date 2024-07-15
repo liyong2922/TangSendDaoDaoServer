@@ -117,10 +117,11 @@ func New(ctx *config.Context) *User {
 func (u *User) Route(r *wkhttp.WKHttp) {
 	auth := r.Group("/v1", u.ctx.AuthMiddleware(r))
 	{
-		auth.POST("/sticker/user", u.PostStickerUser)     //StickerUser
-		auth.GET("/sticker/user", u.GetStickerUser)       //StickerUser
-		auth.DELETE("/sticker/user", u.DeleteStickerUser) //StickerUser
-		auth.GET("/users/:uid", u.get)                    // 根据uid查询用户信息
+		auth.GET("/sticker/user/category", u.GetStickerUsercategory) //StickerUser
+		auth.POST("/sticker/user", u.PostStickerUser)                //StickerUser
+		auth.GET("/sticker/user", u.GetStickerUser)                  //StickerUser
+		auth.DELETE("/sticker/user", u.DeleteStickerUser)            //StickerUser
+		auth.GET("/users/:uid", u.get)                               // 根据uid查询用户信息
 		// 获取用户的会话信息
 		// auth.GET("/users/:uid/conversation", u.userConversationInfoGet)
 
@@ -246,6 +247,10 @@ func (u *User) PostStickerUser(c *wkhttp.Context) {
 
 	c.ResponseOK()
 }
+func (u *User) GetStickerUsercategory(c *wkhttp.Context) {
+
+	c.ResponseOK()
+}
 
 // StickerUser
 func (u *User) GetStickerUser(c *wkhttp.Context) {
@@ -261,8 +266,9 @@ func (u *User) GetStickerUser(c *wkhttp.Context) {
 	for i := range model {
 		model[i].Sort_num = i + 1
 	}
-	if model == nil {
-		c.ResponseError(errors.New("没有自定义的表情"))
+	if len(model) == 0 {
+		u.Error("表情获取失败 module = 0")
+		c.ResponseOK()
 		return
 	}
 
