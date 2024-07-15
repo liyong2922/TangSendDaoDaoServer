@@ -259,7 +259,7 @@ func (u *User) GetStickerUser(c *wkhttp.Context) {
 	}
 	// 给model 增加一个排序字段
 	for i := range model {
-		model[i].sort_num = i
+		model[i].sort_num = i + 1
 	}
 	c.Response(model)
 }
