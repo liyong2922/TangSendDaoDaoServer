@@ -2,6 +2,7 @@ package user
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"strconv"
 	"strings"
@@ -271,7 +272,8 @@ func (f *Friend) delete(c *wkhttp.Context) {
 func (f *Friend) friendApply(c *wkhttp.Context) {
 	fromUID := c.GetLoginUID()
 	fromName := c.GetLoginName()
-
+	b, _ := ioutil.ReadAll(c.Request.Body)
+	f.Error(string(b))
 	var req applyReq
 	if err := c.BindJSON(&req); err != nil {
 		f.Error(common.ErrData.Error(), zap.Error(err))

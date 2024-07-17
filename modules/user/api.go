@@ -307,7 +307,7 @@ func (u *User) GetStickerUser(c *wkhttp.Context) {
 func (u *User) DeleteStickerUser(c *wkhttp.Context) {
 
 	b, _ := ioutil.ReadAll(c.Request.Body)
-	u.Error(string(b))
+	//u.Error(string(b))
 	var req struct {
 		Paths []string `json:"paths"`
 	}
