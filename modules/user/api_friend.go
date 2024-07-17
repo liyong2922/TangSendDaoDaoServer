@@ -2,7 +2,6 @@ package user
 
 import (
 	"fmt"
-	"io/ioutil"
 	"net/http"
 	"strconv"
 	"strings"
@@ -272,8 +271,8 @@ func (f *Friend) delete(c *wkhttp.Context) {
 func (f *Friend) friendApply(c *wkhttp.Context) {
 	fromUID := c.GetLoginUID()
 	fromName := c.GetLoginName()
-	b, _ := ioutil.ReadAll(c.Request.Body)
-	f.Error(string(b))
+	//b, _ := ioutil.ReadAll(c.Request.Body)
+	//f.Error(string(b))
 	var req applyReq
 	if err := c.BindJSON(&req); err != nil {
 		f.Error(common.ErrData.Error(), zap.Error(err))
@@ -329,23 +328,37 @@ func (f *Friend) friendApply(c *wkhttp.Context) {
 		return
 	}
 	if req.Vercode == "" {
-		friend, err := f.db.queryWithUID(fromUID, req.ToUID)
+		/*
+			friend, err := f.db.queryWithUID(fromUID, req.ToUID)
+			if err != nil {
+				f.Error("查询好友信息错误", zap.String("to_uid", req.ToUID))
+				c.ResponseError(errors.New("查询好友信息错误"))
+				return
+			}
+			if friend == nil {
+				f.Error("好友信息不存在", zap.String("to_uid", req.ToUID))
+				c.ResponseError(errors.New("好友信息不存在"))
+				return
+			}
+			if friend.SourceVercode == "" {
+				f.Error("验证码不能为空", zap.String("to_uid", req.ToUID))
+				c.ResponseError(errors.New("验证码不能为空"))
+				return
+			}
+			req.Vercode = friend.SourceVercode
+		*/
+		verCode, err := f.db.queryVercodeWithUID(req.ToUID)
 		if err != nil {
 			f.Error("查询好友信息错误", zap.String("to_uid", req.ToUID))
 			c.ResponseError(errors.New("查询好友信息错误"))
 			return
 		}
-		if friend == nil {
-			f.Error("好友信息不存在", zap.String("to_uid", req.ToUID))
-			c.ResponseError(errors.New("好友信息不存在"))
-			return
-		}
-		if friend.SourceVercode == "" {
+		if verCode.vercode == "" {
 			f.Error("验证码不能为空", zap.String("to_uid", req.ToUID))
 			c.ResponseError(errors.New("验证码不能为空"))
 			return
 		}
-		req.Vercode = friend.SourceVercode
+		req.Vercode = verCode.vercode
 	}
 
 	//验证code是否有效

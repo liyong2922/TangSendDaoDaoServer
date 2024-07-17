@@ -139,6 +139,13 @@ func (d *friendDB) queryWithVercode(vercode string) (*FriendModel, error) {
 	return friend, err
 }
 
+// 通过UID查询用户vercode
+func (d *friendDB) queryVercodeWithUID(uid string) (*UserInfo, error) {
+	var user *UserInfo
+	_, err := d.session.Select("*").From("user").Where("uid=?", uid).Load(&user)
+	return user, err
+}
+
 // 通过vercode查询好友信息
 func (d *friendDB) queryWithVercodes(vercodes []string) ([]*FriendDetailModel, error) {
 	var friends []*FriendDetailModel
@@ -318,5 +325,12 @@ type FriendApplyModel struct {
 	Remark string
 	Token  string
 	Status int // 状态 0.未处理 1.通过 2.拒绝
+	db.BaseModel
+}
+
+// FriendApplyModel 好友申请记录
+type UserInfo struct {
+	UID     string
+	vercode string
 	db.BaseModel
 }
