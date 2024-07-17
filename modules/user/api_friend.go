@@ -353,12 +353,12 @@ func (f *Friend) friendApply(c *wkhttp.Context) {
 			c.ResponseError(errors.New("查询好友信息错误"))
 			return
 		}
-		if verCode.vercode == "" {
+		if verCode.Vercode == "" {
 			f.Error("验证码不能为空", zap.String("to_uid", req.ToUID))
 			c.ResponseError(errors.New("验证码不能为空"))
 			return
 		}
-		req.Vercode = verCode.vercode
+		req.Vercode = verCode.Vercode
 	}
 
 	//验证code是否有效

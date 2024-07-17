@@ -328,9 +328,44 @@ type FriendApplyModel struct {
 	db.BaseModel
 }
 
-// FriendApplyModel 好友申请记录
 type UserInfo struct {
-	UID     string
-	vercode string
+	AppID             string //app id
+	UID               string // 用户唯一id
+	Name              string // 用户名称
+	Username          string // 用户名
+	Email             string // email地址
+	Password          string // 用户密码
+	Category          string //用户分类
+	Sex               int    //性别
+	ShortNo           string //唯一短编号
+	ShortStatus       int    //唯一短编号是否修改0.否1.是
+	Zone              string //区号
+	Phone             string //手机号
+	ChatPwd           string //聊天密码
+	LockScreenPwd     string // 锁屏密码
+	LockAfterMinute   int    // 在几分钟后锁屏 0表示立即
+	DeviceLock        int    //是否开启设备锁
+	SearchByPhone     int    //是否可以通过手机号搜索0.否1.是
+	SearchByShort     int    //是否可以通过短编号搜索0.否1.是
+	NewMsgNotice      int    //新消息通知0.否1.是
+	MsgShowDetail     int    //显示消息通知详情0.否1.是
+	VoiceOn           int    //声音0.否1.是
+	ShockOn           int    //震动0.否1.是
+	OfflineProtection int    // 离线保护
+	Version           int64
+	Status            int    // 状态 0.禁用 1.启用
+	Vercode           string //验证码
+	QRVercode         string // 二维码验证码
+	IsUploadAvatar    int    // 是否上传过头像0:未上传1:已上传
+	Role              string // 角色 admin/superAdmin
+	Robot             int    // 机器人0.否1.是
+	MuteOfApp         int    // app是否禁音（当pc登录的时候app可以设置禁音，当pc登录后有效）
+	IsDestroy         int    // 是否已注销0.否1.是
+	WXOpenid          string // 微信openid
+	WXUnionid         string // 微信unionid
+	GiteeUID          string // gitee uid
+	GithubUID         string // github uid
+	Web3PublicKey     string // web3公钥
+	MsgExpireSecond   int64  // 消息过期时长
 	db.BaseModel
 }
